@@ -37,7 +37,12 @@ public class PessoaFisicaDAO {
         } finally {
             ConectorBD.close(conn);
         }
-        pf.exibir();
+        if (pf != null){
+            pf.exibir();
+        }else{
+            System.out.println("Este ID não existe!");
+        }
+        
         return pf;
     }
 

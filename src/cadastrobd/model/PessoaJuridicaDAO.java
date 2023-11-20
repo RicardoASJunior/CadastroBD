@@ -36,7 +36,11 @@ public class PessoaJuridicaDAO {
         } finally {
             ConectorBD.close(conn);
         }
-        pj.exibir();
+        if (pj != null){
+            pj.exibir();
+        }else{
+            System.out.println("Este ID não existe!");
+        }
         return pj;
     }
 
